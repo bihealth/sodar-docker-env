@@ -18,7 +18,7 @@ docker-compose.
 
 * Ubuntu 16.04
 * Python 3.5
-* Docker
+* Docker v17.05+
 * Access to [gitlab.bihealth.org](https://gitlab.bihealth.org) 
 * [Omics Data Access](https://gitlab.bihealth.org/cubi/omics_data_access)
 
