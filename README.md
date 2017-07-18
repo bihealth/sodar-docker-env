@@ -49,3 +49,4 @@ admin user, run `utility/irods_shell.sh`
 * To rebuild and redeploy the environment, run `utility/env_relaunch.sh`.
     * **NOTE:** This will (naturally) erase all data in iRODS, so you'll have to run
 `./manage.py synctaskflow` again!
+* Bring down the environment with `utility/env_down.sh`
