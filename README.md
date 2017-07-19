@@ -5,6 +5,7 @@ A Docker-based development and demo environment for
 Deploys all required components as networked Docker containers using
 docker-compose.
 
+
 ## Included Components
 
 * [omics_taskflow](https://gitlab.bihealth.org/cubi_data_mgmt/omics_taskflow)
@@ -39,6 +40,15 @@ docker-compose.
 server to become active
 * In [Omics Data Access](https://gitlab.bihealth.org/cubi/omics_data_access),
 run `./manage.py synctaskflow`
+
+
+## Mapped Ports on the Host Machine
+
+* iRODS iCAT server: 1247
+* madeline_docker: 5000 
+* omics_taskflow: 5005
+* omics_irods_rest: 5006
+* cloud_browser: 8888 ([URL for web browser](http://0.0.0.0:8888/irods-cloud-browser))
 
 
 ## Tips and Tricks

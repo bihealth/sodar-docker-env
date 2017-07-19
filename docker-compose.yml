@@ -33,9 +33,6 @@ services:
       - "5005:5005"
     expose:
       - "5005"
-    links:
-      - redis
-      - irods
     depends_on:
       - redis
       - irods
@@ -54,8 +51,6 @@ services:
       - "5006:5006"
     expose:
       - "5006"
-    links:
-      - irods
     depends_on:
       - irods
     environment:
@@ -73,6 +68,21 @@ services:
       - "5000"
     environment:
       - IRODS_HOST=omics_irods
+    networks:
+      - omics_bridge
+
+  cloud_browser:
+    image: omics_cloud_browser
+    container_name: omics_cloud_browser
+    build:
+      context: ./cloud_browser
+      dockerfile: ./Dockerfile
+    ports:
+      - "8888:8080"
+    expose:
+      - "8080"
+    depends_on:
+      - irods
     networks:
       - omics_bridge
 
