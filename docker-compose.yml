@@ -41,6 +41,7 @@ services:
       - TASKFLOW_REDIS_HOST=omics_redis
       - TASKFLOW_OMICS_URL=http://172.17.0.1:8000
       - TASKFLOW_IRODS_HOST=omics_irods
+      - TASKFLOW_ALLOW_IRODS_CLEANUP=1
     networks:
       - omics_bridge
 
