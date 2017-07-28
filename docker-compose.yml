@@ -12,7 +12,6 @@ services:
       - omics_bridge
 
   irods:
-    image: omics_irods
     container_name: omics_irods
     build:
       context: ./irods
@@ -73,7 +72,6 @@ services:
       - omics_bridge
 
   cloud_browser:
-    image: omics_cloud_browser
     container_name: omics_cloud_browser
     build:
       context: ./cloud_browser
