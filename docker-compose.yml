@@ -72,7 +72,7 @@ services:
       - omics_bridge
 
   cloud_browser:
-    container_name: omics_cloud_browser
+    container_name: omics_cloud_browser_dev
     build:
       context: ./cloud_browser
       dockerfile: ./Dockerfile
