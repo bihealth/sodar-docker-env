@@ -26,7 +26,7 @@ services:
       - omics_bridge
 
   omics_taskflow:
-    image: "gitlab.bihealth.org:4567/cubi_data_mgmt/omics_taskflow/omics_taskflow:latest"
+    image: "cubi-gitlab.bihealth.org:4567/cubi_engineering/cubi_data_mgmt/omics_taskflow"
     container_name: omics_taskflow_app
     ports:
       - "5005:5005"
@@ -45,7 +45,7 @@ services:
       - omics_bridge
 
   omics_irods_rest:
-    image: "gitlab.bihealth.org:4567/cubi_data_mgmt/omics_irods_rest/omics_irods_rest:latest"
+    image: "cubi-gitlab.bihealth.org:4567/cubi_engineering/cubi_data_mgmt/omics_irods_rest"
     container_name: omics_irods_rest_app
     ports:
       - "5006:5006"
@@ -60,7 +60,7 @@ services:
       - omics_bridge
 
   madeline:
-    image: "gitlab.bihealth.org:4567/cubi_data_mgmt/madeline_docker:latest"
+    image: "cubi-gitlab.bihealth.org:4567/cubi_engineering/cubi_data_mgmt/madeline_docker"
     container_name: madeline
     ports:
       - "5000:5000"

@@ -1,17 +1,18 @@
 # Omics Docker Environment
 
 A Docker-based development and demo environment for
-[Omics Data Access](https://gitlab.bihealth.org/cubi/omics_data_access).
+[Omics Data Access](https://cubi-gitlab.bihealth.org/cubi_engineering/cubi_data_mgmt/omics_data_access).
 Deploys all required components as networked Docker containers using
 docker-compose.
 
 
 ## Included Components
 
-* [omics_taskflow](https://gitlab.bihealth.org/cubi_data_mgmt/omics_taskflow)
-* [omics_irods_rest](https://gitlab.bihealth.org/cubi_data_mgmt/omics_irods_rest)
-* [madeline_docker](https://gitlab.bihealth.org/cubi_data_mgmt/madeline_docker)
+* [omics_taskflow](https://cubi-gitlab.bihealth.org/cubi_engineering/cubi_data_mgmt/omics_taskflow)
+* [omics_irods_rest](https://cubi-gitlab.bihealth.org/cubi_engineering/cubi_data_mgmt/omics_irods_rest)
+* [madeline_docker](https://cubi-gitlab.bihealth.org/cubi_engineering/cubi_data_mgmt/madeline_docker)
 * [iRODS iCAT server](https://github.com/mjstealey/irods-provider-postgres)
+* RENCI Cloud Browser
 * Redis
 
 
@@ -20,8 +21,8 @@ docker-compose.
 * Ubuntu 16.04
 * Python 3.5
 * Docker v17.05+
-* Access to [gitlab.bihealth.org](https://gitlab.bihealth.org) 
-* [Omics Data Access](https://gitlab.bihealth.org/cubi/omics_data_access)
+* Access to [gitlab.bihealth.org](https://cubi-gitlab.bihealth.org) 
+* [Omics Data Access](https://cubi-gitlab.bihealth.org/cubi_engineering/cubi_data_mgmt/omics_data_access)
 
 
 ## Installation
@@ -38,7 +39,7 @@ docker-compose.
 
 * **NOTE:** After deploying, you must wait for some seconds for the iRODS iCAT
 server to become active
-* In [Omics Data Access](https://gitlab.bihealth.org/cubi/omics_data_access),
+* In [Omics Data Access](https://cubi-gitlab.bihealth.org/cubi_engineering/cubi_data_mgmt/omics_data_access),
 run `./manage.py synctaskflow`
 
 
