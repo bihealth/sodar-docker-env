@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
+SCRIPT_PATH=$(dirname "$(readlink -f "$0")")
 docker-compose down
 docker-compose pull
 docker-compose build
-./env_up.sh
+${SCRIPT_PATH}/env_up.sh
