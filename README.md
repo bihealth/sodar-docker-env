@@ -1,15 +1,18 @@
-# Omics Docker Environment
+# SODAR Docker Environment
 
 A Docker-based development and demo environment for
-[Omics Data Management](https://cubi-gitlab.bihealth.org/cubi_engineering/cubi_data_mgmt/omics_data_mgmt).
-Deploys all required components as networked Docker containers using
-docker-compose.
+[SODAR](https://cubi-gitlab.bihealth.org/cubi_engineering/cubi_data_mgmt/sodar).
+Deploys required components as networked Docker containers using docker-compose.
 
 
 ## Included Components
 
-* [iRODS iCAT server](https://github.com/mjstealey/irods-provider-postgres)
-* Redis (for use with omics_taskflow)
+- [iRODS iCAT server](https://github.com/mjstealey/irods-provider-postgres)
+    * Data wiped upon restart
+    * To be used as a test server
+    * Running iRODS locally or via a VM recommended for permanent storage during
+      development
+- Redis (for use with sodar_taskflow)
 
 
 ## Requirements
@@ -18,7 +21,8 @@ docker-compose.
 * Python 3.5+
 * Docker v18.03+
 * Access to [cubi-gitlab.bihealth.org](https://cubi-gitlab.bihealth.org) 
-* [Omics Data Management](https://cubi-gitlab.bihealth.org/cubi_engineering/cubi_data_mgmt/omics_data_mgmt)
+* [SODAR](https://cubi-gitlab.bihealth.org/cubi_engineering/cubi_data_mgmt/sodar)
+* [SODAR Taskflow](https://cubi-gitlab.bihealth.org/cubi_engineering/cubi_data_mgmt/sodar)
 
 
 ## Installation
@@ -36,15 +40,15 @@ docker-compose.
 
 * **NOTE:** After deploying, you must wait for some seconds for the iRODS iCAT
 server to become active
-    * To check the status, use `docker logs omics_irods -t`
-* In [Omics Data Management](https://cubi-gitlab.bihealth.org/cubi_engineering/cubi_data_mgmt/omics_data_mgmt),
+    * To check the status, use `docker logs sodar_irods -t`
+* In [SODAR](https://cubi-gitlab.bihealth.org/cubi_engineering/cubi_data_mgmt/sodar),
 run `./manage.py synctaskflow`
 
 
 ## Mapped Ports on the Host Machine
 
-* iRODS iCAT server: 1247
-* Redis: **TODO**
+* iRODS iCAT server: 4477
+* Redis: 6633
 
 ## Tips and Tricks
 * To erase data from iRODS, run `utility/cleanup_irods.sh`

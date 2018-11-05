@@ -3,16 +3,16 @@ version: "3"
 services:
   redis:
     image: "redis:alpine"
-    container_name: omics_redis
+    container_name: sodar_redis
     ports:
       - "6633:6379"
     expose:
       - "6379"
     networks:
-      - omics_bridge
+      - sodar_bridge
 
   irods:
-    container_name: omics_irods
+    container_name: sodar_irods
     build:
       context: ./irods
       dockerfile: ./Dockerfile
@@ -23,8 +23,8 @@ services:
     environment:
       - IRODS_ZONE_NAME=omicsZone
     networks:
-      - omics_bridge
+      - sodar_bridge
 
 networks:
-  omics_bridge:
+  sodar_bridge:
     driver: bridge
