@@ -7,11 +7,10 @@ Deploys required components as networked Docker containers using docker-compose.
 
 ## Included Components
 
-- [iRODS iCAT server](https://github.com/mjstealey/irods-provider-postgres)
-    * Data wiped upon restart
-    * To be used as a test server
-    * Running iRODS locally or via a VM recommended for permanent storage during
-      development
+- 2x [iRODS iCAT server](https://github.com/mjstealey/irods-provider-postgres)
+    * One for development
+        * NOTE: Data wiped upon restart! (permanent storage hook to be done)
+    * One for testing    
 - Redis (for use with sodar_taskflow)
 
 
@@ -47,7 +46,8 @@ run `./manage.py synctaskflow`
 
 ## Mapped Ports on the Host Machine
 
-* iRODS iCAT server: 4477
+* Development iRODS iCAT server: 4477
+* Test iRODS iCAT server: 4488
 * Redis: 6633
 
 ## Tips and Tricks

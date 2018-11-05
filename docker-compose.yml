@@ -25,6 +25,20 @@ services:
     networks:
       - sodar_bridge
 
+  irods_test:
+    container_name: sodar_irods_test
+    build:
+      context: ./irods
+      dockerfile: ./Dockerfile
+    ports:
+    - "4488:1247"
+    expose:
+    - "1247"
+    environment:
+    - IRODS_ZONE_NAME=omicsZone
+    networks:
+    - sodar_bridge
+
 networks:
   sodar_bridge:
     driver: bridge
