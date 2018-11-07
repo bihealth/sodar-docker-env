@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
-curl 0.0.0.0:4488/cleanup
-echo ""
+curl -X POST -H "Content-Type: application/json" -d '{"test_mode": 1}' 0.0.0.0:5005/cleanup
+echo
