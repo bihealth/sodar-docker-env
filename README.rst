@@ -1,0 +1,70 @@
+SODAR Docker Environment
+========================
+
+A Docker-based development and demo environment for
+`SODAR <https://cubi-gitlab.bihealth.org/cubi_engineering/cubi_data_mgmt/sodar>`_
+Deploys required components as networked Docker containers using docker-compose.
+
+
+Included Components
+-------------------
+
+- 2x `iRODS iCAT server <https://github.com/mjstealey/irods-provider-postgres>`_
+    * One for development
+        * NOTE: Data wiped upon restart! (permanent storage hook to be done)
+    * One for testing
+- Redis (for use with sodar_taskflow)
+
+
+Requirements
+------------
+
+- Ubuntu 16.04
+- Python 3.5+
+- Docker v18.03+
+- Access to `cubi-gitlab.bihealth.org <https://cubi-gitlab.bihealth.org>`_
+- `SODAR <https://cubi-gitlab.bihealth.org/cubi_engineering/cubi_data_mgmt/sodar>`_
+- `SODAR Taskflow <https://cubi-gitlab.bihealth.org/cubi_engineering/cubi_data_mgmt/sodar>`_
+
+
+Installation
+------------
+
+- Install ``docker-ce``
+    * For accessing Docker without root access,
+      `see here <https://docs.docker.com/install/linux/linux-postinstall/>`_
+- Set up and activate a ``virtualenv`` environment for Python 3
+- Run ``pip install -r requirements.txt``
+- Build and run the environment with `utility/env_relaunch.sh`
+
+
+Setup After Installation
+------------------------
+
+- **NOTE:** After deploying, you must wait for some seconds for the iRODS iCAT
+  server to become active
+    * To check the status, use ``docker logs sodar_irods -t``
+- If you have existing projects in your local SODAR installation, go to your
+  SODAR project and execute ``./manage.py synctaskflow``
+
+
+Mapped Ports on the Host Machine
+--------------------------------
+
+- Development iRODS iCAT server: ``4477``
+- Test iRODS iCAT server: ``4488``
+- Redis: ``6633``
+
+
+Tips and Tricks
+---------------
+
+- To erase data from iRODS, run ``utility/cleanup_irods.sh``
+    * **WARNING:** This can not be undone!
+    * The same for the iRODS test server: ``utility/cleanup_irods_test.sh``
+- For a shortcut to access the iRODS shell on the iRODS iCAT server as the
+  admin user, run ``utility/irods_shell.sh`` (or ``utility/irods_shell_test.sh``)
+- To rebuild and redeploy the environment, run ``utility/env_relaunch.sh``.
+    * **NOTE:** This will (naturally) erase all data in iRODS, so you'll have to
+      run ``./manage.py synctaskflow`` again!
+- Bring down the environment with ``utility/env_down.sh``
