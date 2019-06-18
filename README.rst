@@ -10,10 +10,11 @@ Included Components
 -------------------
 
 - 2x `iRODS iCAT server <https://github.com/mjstealey/irods-provider-postgres>`_
-    * One for development
+    * **Main** server for development
         * NOTE: Data wiped upon restart! (permanent storage hook to be done)
-    * One for testing
-- Redis (for use with sodar_taskflow)
+    * **Test** Server for testing
+        * Content will be wiped out during tests and restart
+- Redis (for use with SODAR Taskflow and the SODAR v0.5+ Celery process)
 
 
 Requirements
@@ -21,7 +22,6 @@ Requirements
 
 - Ubuntu 16.04
 - Python 3.5+
-- Docker v18.03+
 - Access to `cubi-gitlab.bihealth.org <https://cubi-gitlab.bihealth.org>`_
 - `SODAR <https://cubi-gitlab.bihealth.org/cubi_engineering/cubi_data_mgmt/sodar>`_
 - `SODAR Taskflow <https://cubi-gitlab.bihealth.org/cubi_engineering/cubi_data_mgmt/sodar>`_
@@ -35,7 +35,7 @@ Installation
       `see here <https://docs.docker.com/install/linux/linux-postinstall/>`_
 - Set up and activate a ``virtualenv`` environment for Python 3
 - Run ``pip install -r requirements.txt``
-- Build and run the environment with `utility/env_relaunch.sh`
+- Build and run the environment with ``utility/env_restart.sh``
 
 
 Setup After Installation
@@ -64,7 +64,7 @@ Tips and Tricks
     * The same for the iRODS test server: ``utility/cleanup_irods_test.sh``
 - For a shortcut to access the iRODS shell on the iRODS iCAT server as the
   admin user, run ``utility/irods_shell.sh`` (or ``utility/irods_shell_test.sh``)
-- To rebuild and redeploy the environment, run ``utility/env_relaunch.sh``.
+- To rebuild and redeploy the environment, run ``utility/env_restart.sh``.
     * **NOTE:** This will (naturally) erase all data in iRODS, so you'll have to
       run ``./manage.py synctaskflow`` again!
 - Bring down the environment with ``utility/env_down.sh``
