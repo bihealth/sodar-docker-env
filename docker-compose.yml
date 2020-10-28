@@ -11,8 +11,8 @@ services:
     networks:
       - sodar_bridge
 
-  irods:
-    container_name: sodar_irods
+  irods_main:
+    container_name: sodar_irods_main
     build:
       context: ./irods
       dockerfile: ./Dockerfile
