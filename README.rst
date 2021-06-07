@@ -1,9 +1,14 @@
 SODAR Docker Environment
 ========================
 
-A Docker-based development and demo environment for
-`SODAR <https://github.com/bihealth/sodar-server>`_
+A Docker-based local development environment for
+`SODAR <https://github.com/bihealth/sodar-server>`_.
+
 Deploys required components as networked Docker containers using docker-compose.
+
+**NOTE:** For deploying SODAR in production using Docker, see the
+`sodar-docker-compose <https://github.com/bihealth/sodar-docker-compose>`_
+project.
 
 
 Included Components
