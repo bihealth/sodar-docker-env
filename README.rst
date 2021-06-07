@@ -2,7 +2,7 @@ SODAR Docker Environment
 ========================
 
 A Docker-based development and demo environment for
-`SODAR <https://cubi-gitlab.bihealth.org/cubi_engineering/cubi_data_mgmt/sodar>`_
+`SODAR <https://github.com/bihealth/sodar-server>`_
 Deploys required components as networked Docker containers using docker-compose.
 
 
@@ -20,11 +20,10 @@ Included Components
 Requirements
 ------------
 
-- Ubuntu 16.04
-- Python 3.5+
-- Access to `cubi-gitlab.bihealth.org <https://cubi-gitlab.bihealth.org>`_
-- `SODAR <https://cubi-gitlab.bihealth.org/cubi_engineering/cubi_data_mgmt/sodar>`_
-- `SODAR Taskflow <https://cubi-gitlab.bihealth.org/cubi_engineering/cubi_data_mgmt/sodar>`_
+- Ubuntu (20.04 recommended)
+- Python 3.6+
+- `SODAR <https://github.com/bihealth/sodar-server>`_
+- `SODAR Taskflow <https://github.com/bihealth/sodar-taskflow>`_
 
 
 Installation
