@@ -6,10 +6,12 @@ A Docker-based local development environment for
 
 Deploys required components as networked Docker containers using docker-compose.
 
-**NOTE:** For deploying SODAR in production using Docker, see the
-`sodar-docker-compose <https://github.com/bihealth/sodar-docker-compose>`_
-project.
+ARCHIVED PROJECT, NO LONGER IN DEVELOPMENT
+------------------------------------------
 
+This project is no longer in use and has been archived. Instead, please use
+`sodar-docker-compose <https://github.com/bihealth/sodar-docker-compose>`_
+for SODAR development.
 
 Included Components
 -------------------
